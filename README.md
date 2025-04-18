@@ -8,8 +8,6 @@ Simple tool for Administrators of Motor Town game servers. Includes all function
 
 Configuration is stored in:
 - Windows: `%APPDATA%\com.motor-town-server-tool.app\api_config.json`
-- macOS: `~/Library/Application Support/com.motor-town-server-tool.app/api_config.json`
-- Linux: `~/.config/com.motor-town-server-tool.app/api_config.json`
 
 *This program has only been tested on Windows*
 
