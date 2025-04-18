@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <title>Motor Town Server Tool</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <div id="connection-container" class="section">
+        <h2>Connection Info</h2>
+        <form class="row" id="config-form">
+          <input id="api-host" type="text" placeholder="IP Address" />
+          <input id="api-port" type="number" placeholder="Port" />
+          <input id="api-password" type="text" placeholder="Password" style="color: #F6F8FF;" />
+          <button type="submit">Save</button>
+        </form>
+      </div>
+
+      <div id="chat-section" class="section">
+        <h2>Announcements</h2>
+        <form class="row" id="chat-form">
+          <input id="chat-message" placeholder="Enter text" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+
+      <div id="player-list-section" class="section">
+        <div class="section-header">
+          <h2>Players</h2>
+          <input type="checkbox" id="player-section-toggle">
+        </div>
+        <div id="player-section-content">
+          <table id="player-list-table">
+            <colgroup>
+              <col style="width:55%">
+              <col style="width:30%">
+              <col style="width:7.5%">
+              <col style="width:7.5%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="4">
+                  <div class="player-controls">
+                    <div class="control-group">
+                      <span id="total-online-display" style="margin-right: 10px;">PLayers Online: --</span>
+                      <img id="refresh-player-list-icon" src="src-tauri/icons/refresh.svg.svg" alt="Refresh" title="Refresh Player List">
+                    </div>
+                    <div class="control-group">
+                      <label for="player-poll-rate">Polling Rate (s):</label>
+                      <input type="number" id="player-poll-rate" name="player-poll-rate" min="1" max="999" value="30" style="width: 3ch;">
+                    </div>
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span>Name</span>
+                  </div>
+                </th>
+                <th>Unique ID</th>
+                <th colspan="2" style="text-align: center;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="player-list-body"></tbody>
+          </table>
+          <div id="pagination-controls" class="pagination-controls">
+            <button id="prev-page-btn" disabled>&lt; Prev</button>
+            <span id="page-indicator">Page 0 of 0</span>
+            <button id="next-page-btn" disabled>Next &gt;</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="ban-list-section" class="section">
+        <div class="section-header">
+          <h2>Bans</h2>
+        </div>
+        <div id="ban-section-content">
+          <table id="ban-list-table">
+            <colgroup>
+              <col style="width:55%">
+              <col style="width:30%">
+              <col style="width:15%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="3">
+                  <div class="player-controls">
+                    <div class="control-group">
+                      <span id="total-bans-display" style="margin: 8px 10px 8px 0;">Total Bans: -</span>
+                      <img id="refresh-ban-list-icon" src="src-tauri/icons/refresh.svg.svg" alt="Refresh" title="Refresh Ban List">
+                    </div>
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span>Name</span>
+                  </div>
+                </th>
+                <th>Unique ID</th>
+                <th style="text-align: center;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="ban-list-body"></tbody>
+          </table>
+          <div id="ban-pagination-controls" class="pagination-controls">
+            <button id="ban-prev-page-btn" disabled>&lt; Prev</button>
+            <span id="ban-page-indicator">Page 0 of 0</span>
+            <button id="ban-next-page-btn" disabled>Next &gt;</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="toast-container"></div>
+    </main>
+  </body>
+</html>
