@@ -10,8 +10,8 @@ A Go CLI utility to interact with the web API for Motor Town dedicated servers.
 | Windows 64-bit | amd64 | ✅ | `mtst_windows_x86_64.exe` |
 | Linux 32-bit | 386 | ✅ | `mtst_linux_x86` |
 | Linux 64-bit | amd64 | ✅ | `mtst_linux_x86_64` |
-| Darwin 64-bit | amd64 | ❌ | `` |
-| Darwin ARM64 | arm64 | ❌ | `` |
+| Darwin 64-bit | amd64 | ❌ | `N/A` |
+| Darwin ARM64 | arm64 | ❌ | `N/A` |
 
 > **Note:** Platforms marked as unsupported or not listed may still be compatible but have not been tested, verified, or built for those architectures.
 
