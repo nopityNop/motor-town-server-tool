@@ -1,7 +1,5 @@
 # Motor Town Server Tool
 
-## About
-
 A Go CLI utility to interact with the web API for Motor Town dedicated servers.
 
 ## Platform Support
